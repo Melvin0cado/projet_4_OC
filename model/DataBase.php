@@ -1,11 +1,17 @@
 <?php
-class DataBase
+
+final class DataBase
 {
     private $pdo;
-
+    
     private function connect()
     {
         $this->pdo = new PDO('mysql:host=localhost;dbname=projet_4_oc;charset=utf8', 'root', '');
+    }
+
+    private function disconnect()
+    {
+        $this->pdo = null;
     }
 
     public function insert(String $table_name, array $type_items, array $items)
@@ -26,21 +32,47 @@ class DataBase
         $query = "INSERT INTO $table_name ($string_query) VALUES ($string_interrogation_point)";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute($items);
+
+        $this->disconnect();
     }
 
-    public function selectAll(String $table_name, String $sortType='', String $sort='')
+    public function selectAll(String $table_name, String $sortBy='', String $sort='', String $class='')
     {
         $this->connect();
 
         $query = "SELECT * FROM $table_name";
 
         if ($sort !== '') {
-            $query = $query." ORDER BY $sortType $sort";
+            $query = "$query ORDER BY $sortBy $sort";
         }
 
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();
 
+        $this->disconnect();
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $class);
+        return $stmt->fetchAll();
+    }
+
+    public function selectByElement(String $table_name, String $elementType, String $element, String $sortBy='', String $sort='', String $class='', bool $all=false)
+    {
+        $this->connect();
+
+        $query = "SELECT * FROM $table_name WHERE $elementType=?";
+        if ($sort !== '') {
+            $query = "$query ORDER BY $sortBy $sort";
+        }
+
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute([$element]);
+
+        $this->disconnect();
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $class);
+        if ($all === true) {
+            return $stmt->fetchAll();
+        }
         return $stmt->fetch();
     }
 
@@ -63,6 +95,8 @@ class DataBase
         $query = "UPDATE $table_name SET $string_query WHERE id=? ";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute($itemsToExecute);
+                
+        $this->disconnect();
     }
 
     public function deleteById(String $table_name, int $id)
@@ -73,6 +107,6 @@ class DataBase
         $stmt = $this->pdo->prepare($query);
         $stmt->execute([$id]);
 
-        return $stmt->rowCount();
+        $this->disconnect();
     }
 }
