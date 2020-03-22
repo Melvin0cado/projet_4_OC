@@ -7,6 +7,9 @@
     <input name="password" type="password" placeholder="Mot de passe" />
     <input name="submit" type="submit" value="valider" />
 </form>
+<?php if (isset($error)) { ?>
+<p class="text-danger"><?= $error ?></p>
+<?php } ?>
 <?php
     $content = ob_get_clean();
 
