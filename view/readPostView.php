@@ -1,8 +1,6 @@
 <?php ob_start(); ?>
 <h1>Post</h1>
-<?php
-    if (isset($post)) {
-        ?>
+<?php if (isset($post)) { ?>
     <div>
         <h3>
             titre : <?= $post['title'] ?>,
@@ -23,28 +21,28 @@
             <input name="submit" type="submit" value="valider" required />
         </form>
     </div>
-<?php
-    foreach ($commentList as $comment) {
-        ?>
+<?php foreach ($commentList as $comment) { ?>
 <div class="comments">
     <h3>
         <em> auteur : <?= $comment['author'] ?>, crée le : <?= date('Y-m-d G:i', strtotime($comment['created_at']))?>, signalement : <?= $comment['report_number'] ?></em>
+    <?php if (!isset($_SESSION['admin'])) { ?>
+        <a href="index.php?action=report&commentId=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>&report_number=<?= $comment['report_number'] ?>" >
+            Signaler
+        </a>
+    <?php } ?>
+    <?php if (isset($_SESSION['admin'])) { ?>
+        <a href="index.php?action=removeComment&commentId=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>" >
+            Supprimer le commentaire
+        </a>
+    <?php } ?>
     </h3>
-    <form method="post" action="index.php?action=report&commentId=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>" >
-        <input name="report_number" value=<?= $comment['report_number'] ?> hidden />
-        <input name="report" type="submit" value="signaler" />
-    </form>
-    <a href="index.php?action=removeComment&commentId=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>" >
-        Supprimer le commentaire
-    </a>
     <p>
         <?= htmlspecialchars($comment['content']) ?>
         <br />
     </p>
  </div>
+<?php }} ?>
 <?php
-    }
-    }
     $content = ob_get_clean();
 
     require('template/template.php');

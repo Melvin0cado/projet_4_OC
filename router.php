@@ -29,8 +29,12 @@ if (isset($_GET['action'])) {
         $postController->editPost(intval($_GET['postId']));
     } elseif ($_GET['action'] === 'read_post' && isset($_GET['postId']) && is_int(intval($_GET['postId']))) {
         $postController->readPost(intval($_GET['postId']));
-    } elseif ($_GET['action'] === 'report' && isset($_GET['postId'], $_GET['commentId']) && is_int(intval($_GET['postId'])) && is_int(intval($_GET['commentId']))) {
-        $commentController->addReport(intval($_GET['commentId']), intval($_GET['postId']));
+    } elseif ($_GET['action'] === 'report' &&
+        isset($_GET['postId'], $_GET['commentId'], $_GET['report_number']) &&
+        is_int(intval($_GET['postId'])) &&
+        is_int(intval($_GET['commentId'])) &&
+        is_int(intval($_GET['report_number']))) {
+        $commentController->addReport(intval($_GET['commentId']), intval($_GET['postId']), intval($_GET['report_number']));
     } elseif ($_GET['action'] === 'login') {
         $loginController->administrationLogin();
     } elseif ($_GET['action'] === 'disconnect') {

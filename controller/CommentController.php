@@ -15,7 +15,6 @@ final class CommentController
         if (isset($postId, $_POST['pseudo'], $_POST['comment'], $_POST['submit']) &&
             $_POST['pseudo'] !== '' &&
             $_POST['comment'] !== '') {
-
             $dataTypeToInsert = ['postID','content', 'author','created_at'];
             $dataToInsert = [
                 $postId,
@@ -29,18 +28,17 @@ final class CommentController
         }
     }
 
-    public function removeComment($commentId, $postId){
+    public function removeComment($commentId, $postId)
+    {
         $this->db->deleteById('comment', $commentId);
         $this->globalController->redirect("index.php?action=read_post&postId=$postId");
     }
 
-    public function addReport($commentId, $postId)
+    public function addReport($commentId, $postId, $reportNumber)
     {
-        if (isset($_POST['report'], $_POST['report_number']) && is_int(intval($_POST['report_number']))) {
-            $dataTypeToUpdate = ['report_number'];
-            $dataToInsert = [$_POST['report_number'] + 1];
-            $this->db->updateById('comment', $commentId, $dataTypeToUpdate, $dataToInsert);
-        }
+        $dataTypeToUpdate = ['report_number'];
+        $dataToInsert = [$reportNumber + 1];
+        $this->db->updateById('comment', $commentId, $dataTypeToUpdate, $dataToInsert);
         $this->globalController->redirect("index.php?action=read_post&postId=$postId");
     }
 }
