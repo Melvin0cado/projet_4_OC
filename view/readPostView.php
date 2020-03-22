@@ -16,7 +16,6 @@
     <div>
         <h2>Commentaires : </h2>
         <form method="post" action="index.php?action=create_comment&postId=<?= $post['id'] ?>">
-            <input name="date" type="text" value="<?= date('c') ?>" hidden />
             <input name="pseudo" type="text" placeholder="Pseudo" required />
             <br />
             <textarea name="comment" class="comment" required></textarea>

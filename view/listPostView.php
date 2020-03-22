@@ -14,9 +14,6 @@
     <input name="title" type="text" placeholder="Titre" required>
     <input name="author" type="text" value="Jean Forteroche" disabled />
     <input name="author" type="text" value="Jean Forteroche" hidden />
-    <input name="date" type="text" value="<?= date('Y-m-d G:i') ?>" disabled />
-    <input name="date" type="text" value="<?= date('c') ?>" hidden />
-
     <textarea name="post" id="createPost" required></textarea>
     <input name="submit" type="submit" value="valider" required/>
 </form>

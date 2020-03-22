@@ -11,9 +11,6 @@
     <input name="title" type="text" placeholder="Titre" value=<?= $post['title'] ?>>
     <input name="author" type="text" value="Jean Forteroche" disabled />
     <input name="author" type="text" value="Jean Forteroche" hidden />
-    <input name="date" type="text" value="<?= date('Y-m-d G:i') ?>" disabled />
-    <input name="date" type="text" value="<?= date('c') ?>" hidden />
-
     <textarea  id="editPost" name="post">
         <?= $post['content'] ?>
     </textarea>

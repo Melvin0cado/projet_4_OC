@@ -12,7 +12,7 @@ final class CommentController
 
     public function createComment($postId)
     {
-        if (isset($postId, $_POST['pseudo'], $_POST['comment'], $_POST['submit'], $_POST['date']) &&
+        if (isset($postId, $_POST['pseudo'], $_POST['comment'], $_POST['submit']) &&
             $_POST['pseudo'] !== '' &&
             $_POST['comment'] !== '') {
 
@@ -21,7 +21,7 @@ final class CommentController
                 $postId,
                 $_POST['comment'],
                 $_POST['pseudo'],
-                $_POST['date']
+                date('Y-m-d G:i')
             ];
 
             $this->db->insert('comment', $dataTypeToInsert, $dataToInsert);

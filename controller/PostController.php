@@ -22,7 +22,7 @@ final class PostController
 
     public function createPost()
     {
-        if (isset($_POST['title'], $_POST['author'], $_POST['submit'], $_POST['post'], $_POST['date'])) {
+        if (isset($_POST['title'], $_POST['author'], $_POST['submit'], $_POST['post'])) {
             $dataTypeToInsert = ['title', 'author','created_at', 'content'];
             $dataToInsert = [htmlspecialchars($_POST['title']), htmlspecialchars($_POST['author']), date('Y-m-d G:i'),  $_POST['post']];
             $this->db->insert('post', $dataTypeToInsert, $dataToInsert);
@@ -40,9 +40,9 @@ final class PostController
 
     public function editPost($postId)
     {
-        if (isset($_POST['title'], $_POST['post'], $_POST['author'], $_POST['date'], $_POST['edit'], $postId) && is_Int(intval($postId))) {
+        if (isset($_POST['title'], $_POST['post'], $_POST['author'], $_POST['edit'], $postId) && is_Int(intval($postId))) {
             $dataTypeToUpdate = ['title','content','author','created_at'];
-            $dataToUpdate = [$_POST['title'], $_POST['post'], $_POST['author'], $_POST['date']];
+            $dataToUpdate = [$_POST['title'], $_POST['post'], $_POST['author'], date('Y-m-d G:i')];
             $this->db->updateById('post', $postId, $dataTypeToUpdate, $dataToUpdate);
             $this->globalController->redirect('index.php?action=postList');
         } else {
