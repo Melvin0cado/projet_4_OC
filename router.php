@@ -12,7 +12,7 @@ $db = new DataBase;
 $globalController = new GlobalController;
 $commentController = new CommentController($db, $globalController);
 $postController = new PostController($db, $commentController, $globalController);
-$loginController = new LoginController($db,$globalController);
+$loginController = new LoginController($db, $globalController);
 
 if (isset($_GET['action'])) {
     if ($_GET['action'] === 'postList') {
@@ -21,6 +21,8 @@ if (isset($_GET['action'])) {
         $postController->createPost();
     } elseif ($_GET['action'] === 'create_comment' && $_GET['postId']) {
         $commentController->createComment($_GET['postId']);
+    } elseif ($_GET['action'] === 'removeComment' && isset($_GET['postId'], $_GET['commentId']) && is_int(intval($_GET['postId'])) && is_int(intval($_GET['commentId']))) {
+        $commentController->removeComment($_GET['commentId'], $_GET['postId']);
     } elseif ($_GET['action'] === 'delete_post' && isset($_GET['postId']) && is_int(intval($_GET['postId']))) {
         $postController->deletePost(intval($_GET['postId']));
     } elseif ($_GET['action'] === 'edit_post' && isset($_GET['postId']) && is_int(intval($_GET['postId']))) {
@@ -31,7 +33,7 @@ if (isset($_GET['action'])) {
         $commentController->addReport(intval($_GET['commentId']), intval($_GET['postId']));
     } elseif ($_GET['action'] === 'login') {
         $loginController->administrationLogin();
-    } elseif ($_GET['action'] === 'disconnect'){
+    } elseif ($_GET['action'] === 'disconnect') {
         $loginController->administrationDisconnect();
     } else {
         require('view/error404.php');

@@ -29,6 +29,11 @@ final class CommentController
         }
     }
 
+    public function removeComment($commentId, $postId){
+        $this->db->deleteById('comment', $commentId);
+        $this->globalController->redirect("index.php?action=read_post&postId=$postId");
+    }
+
     public function addReport($commentId, $postId)
     {
         if (isset($_POST['report'], $_POST['report_number']) && is_int(intval($_POST['report_number']))) {

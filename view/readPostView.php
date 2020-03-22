@@ -34,6 +34,9 @@
         <input name="report_number" value=<?= $comment['report_number'] ?> hidden />
         <input name="report" type="submit" value="signaler" />
     </form>
+    <a href="index.php?action=removeComment&commentId=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>" >
+        Supprimer le commentaire
+    </a>
     <p>
         <?= htmlspecialchars($comment['content']) ?>
         <br />
