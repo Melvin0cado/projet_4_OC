@@ -24,20 +24,20 @@ final class LoginController
 
     private function administrationConnect()
     {
-        if ($_POST['name'] === 'admin') {
-            $options = [
-                'cost' => 12,
-            ];
+        $name = $this->db->selectByElement('user', 'name', $_POST['name']);
+        $erreur;
+        if (in_array($_POST['name'],$name)) {
             $password = $_POST['password'];
-            $hash = $this->db->selectByElement('user', 'name', 'admin')['password'];
-            if(password_verify($password, $hash)){
+            $hash = $this->db->selectByElement('user', 'name', $_POST['name'])['password'];
+            if (password_verify($password, $hash)) {
                 $_SESSION['admin'] = true;
             }
             $this->globalController->redirect('index.php?action=postList');
         }
     }
 
-    public function administrationDisconnect() {
+    public function administrationDisconnect()
+    {
         unset($_SESSION['admin']);
         $this->globalController->redirect('index.php?action=postList');
     }
