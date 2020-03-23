@@ -20,17 +20,16 @@
 <br />
 <?php
     }
-?>
-<p>Derniers billets du blog :</p>
-<?php
     if (count($posts) > 0) {
         foreach ($posts as $post) {
             ?>
-    <div class="rounded">
-         <h3 class="titlePost">
-            titre : <?=  $post['title'] ?>, 
-            auteur : <em><?= $post['author'] ?></em>
-        </h3>
+    <div class="card">
+        <div class="card-header d-flex justify-content-between">
+            <h3 class="card-title">
+                titre : <?=  $post['title'] ?>
+            </h3>
+            <span class="card-subtitle mb-2 text-muted"><em><?= $post['author'] ?>, le <?= date('d/m/Y' ,strtotime($post['created_at'])) ?></em></span>
+        </div>
         <?php
             if (isset($_SESSION['admin'])) {
                 ?>
@@ -40,12 +39,16 @@
         <a href="index.php?action=edit_post&postId=<?= $post['id'] ?>">
             Modifier
         </a>
-        <?php } ?>
-        <?= $post['content'] ?>
-        <a href="index.php?action=read_post&postId=<?= $post['id'] ?>">
-            lire la suite
-        </a>
-        <br />
+        <?php
+            } ?>
+        <div class="card-body">
+            <?= $post['content'] ?>
+        <div class="d-flex justify-content-end">
+            <a class="btn btn-primary" href="index.php?action=read_post&postId=<?= $post['id'] ?>">
+                lire la suite
+            </a>
+        </div>
+        </div>
     </div>
 <?php
         }
