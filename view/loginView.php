@@ -1,15 +1,28 @@
 <?php ob_start(); ?>
-<h1>Connexion à l'administration</h1>
+<div class="row">
+<div class="col col-lg-4"></div>
+<div class="col-md-auto">
+<h1 class="text-center text-primary">Connexion à l'administration</h1>
 <br />
-
 <form method="post" action="index.php?action=login">
-    <input name="name" type="text" placeholder="Nom de compte" />
-    <input name="password" type="password" placeholder="Mot de passe" />
-    <input name="submit" type="submit" value="valider" />
+    <div class="form-group">
+        <label for="name">Nom de compte</label>
+        <input id="name" class="form-control" name="name" type="text" placeholder="Ex : Charlie"/>
+    </div>
+     <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input name="password" class="form-control" type="password" />
+    </div>
+    <?php if (isset($error)) { ?>
+        <p class="text-danger"><?= $error ?></p>
+    <?php } ?>
+    <input class="btn btn-primary" name="submit" type="submit" value="valider" />
 </form>
-<?php if (isset($error)) { ?>
-<p class="text-danger"><?= $error ?></p>
-<?php } ?>
+
+</div>
+<div class="col col-lg-4"></div>
+</div>
+
 <?php
     $content = ob_get_clean();
 
