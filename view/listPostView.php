@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+<div>
 <h1>Blog de Jean Forteroche</h1>
 <br />
 <script>
@@ -49,7 +50,8 @@
             </a>
         </div>
         </div>
-    </div>
+    </div>  
+</div>
 <?php
         }
     }

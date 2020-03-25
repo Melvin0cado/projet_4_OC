@@ -1,0 +1,12 @@
+html,
+body {
+    height: 100%;
+}
+
+footer {
+    height: 120px;
+}
+
+#page {
+    min-height: 100vh;
+}

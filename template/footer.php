@@ -1,7 +1,11 @@
-<footer>
+<footer class="row bg-dark d-flex justify-content-center align-items-center">
     <?php if (isset($_SESSION['admin'])) { ?>
-        <a href="index.php?action=disconnect">Déconnexion</a>
+    <div>
+        <a class="btn btn-primary" href="index.php?action=disconnect">Déconnexion</a>
+    </div>
     <?php } else { ?>
-        <a href="index.php?action=login">Administration</a>
+    <div>
+        <a class=" btn btn-primary" href="index.php?action=login">Administration</a>
+    </div>
     <?php } ?>
 </footer>

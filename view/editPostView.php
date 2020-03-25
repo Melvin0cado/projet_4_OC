@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+<div>
 <h1>Modifier le post</h1>
 <br />
 <script>
@@ -16,7 +17,7 @@
     </textarea>
     <input name="edit" type="submit" value="Modifier" />
 </form>
-<br />
+</div>
 <?php
     $content = ob_get_clean();
 

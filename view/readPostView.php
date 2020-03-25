@@ -1,5 +1,6 @@
 <?php ob_start(); ?>
-<h1>Post</h1>
+<div>
+    <h1>Post</h1>
 <?php if (isset($post)) { ?>
     <div>
         <h3>
@@ -22,25 +23,26 @@
         </form>
     </div>
 <?php foreach ($commentList as $comment) { ?>
-<div class="comments">
-    <h3>
-        <em> auteur : <?= $comment['author'] ?>, crée le : <?= date('Y-m-d G:i', strtotime($comment['created_at']))?>, signalement : <?= $comment['report_number'] ?></em>
-    <?php if (!isset($_SESSION['admin'])) { ?>
-        <a href="index.php?action=report&commentId=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>&report_number=<?= $comment['report_number'] ?>" >
-            Signaler
-        </a>
-    <?php } ?>
-    <?php if (isset($_SESSION['admin'])) { ?>
-        <a href="index.php?action=removeComment&commentId=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>" >
-            Supprimer le commentaire
-        </a>
-    <?php } ?>
-    </h3>
-    <p>
-        <?= htmlspecialchars($comment['content']) ?>
-        <br />
-    </p>
- </div>
+    <div class="comments">
+        <h3>
+            <em> auteur : <?= $comment['author'] ?>, crée le : <?= date('Y-m-d G:i', strtotime($comment['created_at']))?>, signalement : <?= $comment['report_number'] ?></em>
+        <?php if (!isset($_SESSION['admin'])) { ?>
+            <a href="index.php?action=report&commentId=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>&report_number=<?= $comment['report_number'] ?>" >
+                Signaler
+            </a>
+        <?php } ?>
+        <?php if (isset($_SESSION['admin'])) { ?>
+            <a href="index.php?action=removeComment&commentId=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>" >
+                Supprimer le commentaire
+            </a>
+        <?php } ?>
+        </h3>
+        <p>
+            <?= htmlspecialchars($comment['content']) ?>
+            <br />
+        </p>
+    </div>
+</div>
 <?php }} ?>
 <?php
     $content = ob_get_clean();
