@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+<div>
 <h1>Blog de Jean Forteroche</h1>
 <script>
     tinymce.init({
@@ -27,6 +28,9 @@
 <?php
         }
     }
+?>
+</div>
+<?php
     $content = ob_get_clean();
 
     require('template/template.php');

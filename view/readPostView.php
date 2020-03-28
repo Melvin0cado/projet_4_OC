@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+<div>
 <?php if (isset($post)) {
 
     require("template/templatePost.php");
@@ -35,6 +36,7 @@
     </div>
 <?php }
 } ?>
+</div>
 <?php
     $content = ob_get_clean();
 
