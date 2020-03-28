@@ -15,7 +15,7 @@
         <?php if (isset($error)) { ?>
             <p class="text-danger"><?= $error ?></p>
         <?php } ?>
-        <input class="btn btn-primary" name="submit" type="submit" value="valider" />
+        <input class="btn btn-primary" name="submit" type="submit" value="Valider" />
     </form>
 </div>
 <div class="col col-lg-4"></div>

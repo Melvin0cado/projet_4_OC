@@ -19,7 +19,7 @@
             <br />
             <textarea name="comment" class="comment" required></textarea>
             <br />
-            <input name="submit" type="submit" value="valider" required />
+            <input name="submit" type="submit" value="valider" />
         </form>
     </div>
 <?php foreach ($commentList as $comment) { ?>

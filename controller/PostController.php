@@ -32,7 +32,7 @@ final class PostController
 
     public function deletePost($postId)
     {
-        if (isset($_POST['delete']) && is_int($postId)) {
+        if (isset($postId) && is_int($postId)) {
             $this->db->deleteById('post', $postId);
             $this->globalController->redirect('index.php?action=postList');
         }
