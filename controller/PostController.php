@@ -40,7 +40,7 @@ final class PostController
 
     public function editPost($postId)
     {
-        if (isset($_POST['title'], $_POST['post'], $_POST['author'], $_POST['edit'], $postId) && is_Int(intval($postId))) {
+        if (isset($_POST['title'], $_POST['post'], $_POST['author'], $_POST['submit'], $postId) && is_Int(intval($postId))) {
             $dataTypeToUpdate = ['title','content','author','created_at'];
             $dataToUpdate = [$_POST['title'], $_POST['post'], $_POST['author'], date('Y-m-d G:i')];
             $this->db->updateById('post', $postId, $dataTypeToUpdate, $dataToUpdate);

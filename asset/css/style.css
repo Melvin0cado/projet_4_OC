@@ -15,3 +15,9 @@ footer {
 .bg-footer-post {
     background-color: rgba(255, 255, 255, 0.3);
 }
+
+#tinymce+.tox {
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem !important;
+    margin-bottom: 0.25rem;
+}
