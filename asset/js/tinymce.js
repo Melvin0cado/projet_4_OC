@@ -14,6 +14,7 @@ tinymce.init({
         table: { title: 'table', items: 'inserttable | cell row column | tableprops deletetable' },
         help: { title: 'help', items: 'help' }
     },
+    skin: 'oxide-dark',
     toolbar: 'undo redo |' +
         'styleselect |' +
         'fontselect fontsizeselect bold italic underline |' +

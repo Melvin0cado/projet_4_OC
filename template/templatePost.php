@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card mt-2">
     <div class="card-header d-flex justify-content-between">
         <h3 class="card-title">
             <?=  $post['title'] ?>

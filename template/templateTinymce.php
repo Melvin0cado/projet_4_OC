@@ -18,10 +18,14 @@
         ?>
     <script src="asset/js/tinymce.js" ></script>
     <form method="post" action="index.php?<?= $action ?>" >
-        <div>
-            <input name="title" type="text" placeholder="Titre" value="<?= $postTitle ?>" required>
-            <input name="author" type="text" value="Jean Forteroche" disabled />
+    <div class="row mb-2">
+        <div class="col">
+            <input class="form-control" name="title" type="text" placeholder="Titre" value="<?= $postTitle ?>" required>
         </div>
+        <div class="col">
+            <input class="form-control" name="author" type="text" value="Jean Forteroche" readonly />
+        </div>
+    </div>
         <input name="author" type="text" value="Jean Forteroche" hidden />
         <textarea id="tinymce" class="mb-1" name="post" id="tinymce">
             <?= $postContent ?>
