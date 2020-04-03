@@ -23,7 +23,7 @@
             <input class="form-control" name="title" type="text" placeholder="Titre" value="<?= $postTitle ?>" required>
         </div>
         <div class="col">
-            <input class="form-control" name="author" type="text" value="Jean Forteroche" readonly />
+            <input class="form-control" name="author" type="text" value="Jean Forteroche" disabled />
         </div>
     </div>
         <input name="author" type="text" value="Jean Forteroche" hidden />
