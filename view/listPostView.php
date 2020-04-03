@@ -1,6 +1,5 @@
 <?php ob_start(); ?>
 <div>
-<h1>Blog de Jean Forteroche</h1>
 <script src="asset/js/tinymce.js"></script>
 <?php require('template/templateTinymce.php'); ?>
 <?php

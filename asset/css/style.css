@@ -4,12 +4,12 @@ body {
 }
 
 footer {
-    margin-top: 30px;
     height: 120px;
 }
 
-#page {
+.page {
     min-height: 100vh;
+    margin-top: 61px;
 }
 
 .bg-footer-post {
@@ -20,4 +20,9 @@ footer {
     border: 1px solid rgba(0, 0, 0, .125);
     border-radius: .25rem !important;
     margin-bottom: 0.25rem;
+}
+
+.nav-link:hover {
+    background-color: #007bff;
+    color: white;
 }
