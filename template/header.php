@@ -16,6 +16,12 @@
         <li class="nav-item w-100 d-flex justify-content-center">
             <a class="nav-link w-100 text-center" href="index.php?action=createPost">Créer un post</a>
         </li>
+        <li class="nav-item w-100 d-flex justify-content-center">
+            <a class="nav-link w-100 text-center" href="index.php?action=postList">Gérer les post</a>
+        </li>
+         <li class="nav-item w-100 d-flex justify-content-center">
+            <a class="nav-link w-100 text-center" href="index.php?action=disconnect">Déconnexion</a>
+        </li>
     </ul>
 </header>
 

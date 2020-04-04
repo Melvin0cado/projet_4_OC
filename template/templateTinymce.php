@@ -1,6 +1,6 @@
 <?php
 
-    if ($_GET['action'] === 'create_post' || $_GET['action'] === 'postList') {
+    if ($_GET['action'] === 'createPost') {
         $action = 'action=create_post' ;
     } elseif ($_GET['action'] === 'edit_post') {
         $action = 'action=edit_post&postId='.$post['id'];
@@ -16,7 +16,7 @@
 
     if (isset($_SESSION['admin'])) {
         ?>
-    <script src="asset/js/tinymce.js" ></script>
+        
     <form method="post" action="index.php?<?= $action ?>" >
     <div class="row mb-2">
         <div class="col">

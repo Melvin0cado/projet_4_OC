@@ -19,6 +19,8 @@ if (isset($_GET['action'])) {
         $postController->getPostList();
     } elseif ($_GET['action'] === 'create_post') {
         $postController->createPost();
+    } elseif ($_GET['action'] === 'createPost') {
+        require('view/createPostView.php');
     } elseif ($_GET['action'] === 'create_comment' && $_GET['postId']) {
         $commentController->createComment($_GET['postId']);
     } elseif ($_GET['action'] === 'removeComment' && isset($_GET['postId'], $_GET['commentId']) && is_int(intval($_GET['postId'])) && is_int(intval($_GET['commentId']))) {
