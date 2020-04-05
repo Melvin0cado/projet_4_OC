@@ -4,7 +4,7 @@ ob_start();
 
 if(isset($_SESSION['admin'])) {
     ?>
-    <h1>Créer un Post</h1>
+    <h1 class="text-primary mb-4">Créer un article</h1>
     <?php
     require('template/templateTinymce.php');
     

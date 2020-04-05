@@ -5,7 +5,7 @@
 
     if(isset($_SESSION['admin'])){
 ?>
-    <h1>Gérer les Post</h1>
+    <h1 class="text-primary mb-4">Gérer les articles</h1>
 <?php
     }
     if (count($posts) > 0) {

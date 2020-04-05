@@ -14,10 +14,10 @@
             <a class="nav-link w-100 text-center" href="index.php?action=dashboard">Tableau de bord</a>
         </li>
         <li class="nav-item w-100 d-flex justify-content-center">
-            <a class="nav-link w-100 text-center" href="index.php?action=createPost">Créer un post</a>
+            <a class="nav-link w-100 text-center" href="index.php?action=createPost">Créer un article</a>
         </li>
         <li class="nav-item w-100 d-flex justify-content-center">
-            <a class="nav-link w-100 text-center" href="index.php?action=postList">Gérer les post</a>
+            <a class="nav-link w-100 text-center" href="index.php?action=postList">Gérer les articles</a>
         </li>
          <li class="nav-item w-100 d-flex justify-content-center">
             <a class="nav-link w-100 text-center" href="index.php?action=disconnect">Déconnexion</a>
