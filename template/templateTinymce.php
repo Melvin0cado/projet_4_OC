@@ -15,12 +15,12 @@
     }
 
     if (isset($_SESSION['admin'])) {
-        ?>
+?>
         
     <form method="post" action="index.php?<?= $action ?>" >
     <div class="row mb-2">
         <div class="col">
-            <input class="form-control" name="title" type="text" placeholder="Titre" value="<?= $postTitle ?>" required>
+            <input class="form-control" name="title" type="text" placeholder="Titre" value="<?= $postTitle ?>" required />
         </div>
         <div class="col">
             <input class="form-control" name="author" type="text" value="Jean Forteroche" disabled />

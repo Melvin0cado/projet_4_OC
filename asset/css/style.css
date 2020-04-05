@@ -9,6 +9,9 @@ footer {
 
 .page {
     min-height: 100vh;
+}
+
+.maginForUser {
     margin-top: 61px;
 }
 

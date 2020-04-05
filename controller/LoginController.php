@@ -46,7 +46,7 @@ final class LoginController
             } else {
                 $error = 'password';
             }
-            $this->globalController->redirect('index.php?action=postList');
+            $this->globalController->redirect('index.php?action=dashboard');
         } else {
             $error = 'name';
         }

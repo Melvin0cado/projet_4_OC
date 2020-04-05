@@ -11,6 +11,7 @@ if(isset($_SESSION['admin'])) {
 }
 
 $content = ob_get_clean();
+$title = 'Créer un post';
 
 require('template/template.php');
 

@@ -109,4 +109,22 @@ final class DataBase
 
         $this->disconnect();
     }
+
+    public function query(String $query, $class = null, bool $all = false){
+        $this->connect();
+
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute();
+
+        $this->disconnect();
+
+        if($class !== null){
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $class);
+        }
+        if ($all === true) {
+            return $stmt->fetchAll();
+        }
+        return $stmt->fetch();
+
+    }
 }
