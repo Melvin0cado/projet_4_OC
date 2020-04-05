@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 <div class="row">
-    <div class="col col-lg-4"></div>
+    <div class="col col-4"></div>
     <div class="col-md-auto">
         <h1 class="text-center text-primary">Connexion à l'administration</h1>
         <form method="post" action="index.php?action=login">
@@ -10,7 +10,7 @@
             </div>
             <div class="form-group">
                 <label for="password">Mot de passe</label>
-                <input name="password" class="form-control" type="password" />
+                <input id="password" name="password" class="form-control" type="password" />
             </div>
             <?php if (isset($error)) { ?>
                 <p class="text-danger"><?= $error ?></p>
@@ -18,7 +18,7 @@
             <input class="btn btn-primary" name="submit" type="submit" value="Valider" />
         </form>
     </div>
-    <div class="col col-lg-4"></div>
+    <div class="col col-4"></div>
 </div>
 
 <?php

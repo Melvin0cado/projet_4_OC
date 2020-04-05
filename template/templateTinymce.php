@@ -27,7 +27,7 @@
         </div>
     </div>
         <input name="author" type="text" value="Jean Forteroche" hidden />
-        <textarea id="tinymce" class="mb-1" name="post" id="tinymce">
+        <textarea id="tinymce" class="mb-1" name="post">
             <?= $postContent ?>
         </textarea>
         <input class="btn btn-primary" name="submit" type="submit" value="Valider"/>

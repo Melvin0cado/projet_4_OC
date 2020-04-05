@@ -155,7 +155,7 @@ ob_start();
                             <?= $post['content'] ?>
                         </div>
                         <div class="col-2">
-                            <a href="index.php?action=read_post&postId=<?= $post['id'] ?>">Gérer ce post</a>
+                            <a href="index.php?action=read_post&postId=<?= $post['id'] ?>">Gérer cet article</a>
                         </div>
                     </div>
                 <?php } ?>
