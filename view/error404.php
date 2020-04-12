@@ -4,6 +4,7 @@
     <h1>ERREUR 404 : Page non trouvée</h1>
     <a class="btn btn-primary" href="index?action=postList">Retour au blog</a>
 </div>
+
 <?php
     $content = ob_get_clean();
     $title = 'ERREUR 404';

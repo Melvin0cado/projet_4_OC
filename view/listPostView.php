@@ -1,24 +1,21 @@
 <?php ob_start(); ?>
 <div>
 
-<?php
+<?php if(isset($_SESSION['admin'])){ ?>
 
-    if(isset($_SESSION['admin'])){
-?>
     <h1 class="text-primary mb-4">Gérer les articles</h1>
-<?php
+
+<?php 
     }
     if (count($posts) > 0) {
         foreach ($posts as $post) {
-?>
-<?php
             require("template/templatePost.php");
-?>
-<?php
         }
     }
 ?>
+
 </div>
+
 <?php
     $content = ob_get_clean();
 

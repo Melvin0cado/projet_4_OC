@@ -1,8 +1,8 @@
 <?php if(!isset($_SESSION['admin'])) { ?>
 
-<header class="d-flex justify-content-between border-bottom align-items-center fixed-top bg-light">
-    <div><a href="index.php?action=postList" ><img class="rounded-right" src="asset/image/logo.png" alt="logo du blog de Jean Forteroche" /></a></div>
-    <div><strong>Blog de Jean Forteroche</strong></div>
+<header class="resp-header d-flex justify-content-between border-bottom align-items-center fixed-top bg-light">
+    <div class="resp-img"><a href="index.php?action=postList" ><img class="rounded-right" src="asset/image/logo.png" alt="logo du blog de Jean Forteroche" /></a></div>
+    <div class="resp-none" ><strong>Blog de Jean Forteroche</strong></div>
 </header>
 
 <?php } else { ?>

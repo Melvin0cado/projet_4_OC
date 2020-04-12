@@ -13,7 +13,9 @@
                 <input id="password" name="password" class="form-control" type="password" />
             </div>
             <?php if (isset($error)) { ?>
+
                 <p class="text-danger"><?= $error ?></p>
+                
             <?php } ?>
             <input class="btn btn-primary" name="submit" type="submit" value="Valider" />
         </form>

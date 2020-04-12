@@ -49,6 +49,7 @@ ob_start();
                     </div>
                 </div>
                 <?php foreach ($mostReportedComment as $comment) { ?>
+
                     <div class="row">
                         <div class="col-1">
                             <?= $comment['id'] ?>
@@ -66,6 +67,7 @@ ob_start();
                             <a href="index.php?action=read_post&postId=<?= $comment['postID'] ?>#comment">Gérer ce commentaire</a>
                         </div>
                     </div>
+
                 <?php } ?>
             </div>
         </div>
@@ -94,6 +96,7 @@ ob_start();
                     </div>
                 </div>
                 <?php foreach ($lastComment as $comment) { ?>
+
                     <div class="row">
                         <div class="col-1">
                             <?= $comment['id'] ?>
@@ -111,14 +114,17 @@ ob_start();
                             <a href="index.php?action=read_post&postId=<?= $comment['postID'] ?>#comment">Gérer ce commentaire</a>
                         </div>
                     </div>
+
                 <?php } ?>
             </div>
         </div>
     </div>
 </div>
+
 <?php } ?>
 
 <?php if (count($lastPost) > 0) { ?>
+
 <div class="row d-flex justify-content-center mb-3">
     <div class="col-11">
         <div class="card">
@@ -137,10 +143,12 @@ ob_start();
                             <strong>Date de création</strong>
                     </div>
                     <div class="col-5">
-                        <strong>Contenu</strong>
+                        <strong>Titre</strong>
                     </div>
                 </div>
+
                 <?php foreach ($lastPost as $post) { ?>
+
                     <div class="row">
                         <div class="col-1">
                             <?= $post['id'] ?>
@@ -152,13 +160,15 @@ ob_start();
                             <?= date('d/m/Y à G:i', strtotime($post['created_at'])) ?>
                         </div>
                         <div class="col-5">
-                            <?= $post['content'] ?>
+                            <?= $post['title'] ?>
                         </div>
                         <div class="col-2">
                             <a href="index.php?action=read_post&postId=<?= $post['id'] ?>">Gérer cet article</a>
                         </div>
                     </div>
+
                 <?php } ?>
+                
             </div>
         </div>
     </div>

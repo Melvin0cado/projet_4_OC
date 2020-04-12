@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
     height: 100%;
 }
 
@@ -28,4 +27,42 @@ footer {
 .nav-link:hover {
     background-color: #007bff;
     color: white;
+}
+
+@media screen and (max-width: 650px) {
+    .resp-none {
+        display: none !important;
+    }
+    .resp-header {
+        position: relative;
+        justify-content: center !important;
+    }
+    .resp-img img {
+        border-radius: 0.25rem !important;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .maginForUser {
+        margin-top: 0px;
+    }
+    .post * {
+        font-size: 0.8rem;
+    }
+    .post .card-header {
+        flex-direction: column;
+    }
+    .post .card-title {
+        font-size: 1.5rem;
+    }
+    .comment-header {
+        padding: 5px;
+        flex-direction: column;
+    }
+    .comment-header em {
+        font-size: 1rem;
+    }
+    .form-comment div.col-2 {
+        flex: 50%;
+        max-width: 50% !important;
+    }
 }

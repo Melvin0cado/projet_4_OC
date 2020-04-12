@@ -1,4 +1,4 @@
-<div class="card mt-2">
+<article class="post card mt-2">
     <div class="card-header d-flex justify-content-between">
         <h3 class="card-title">
             <?=  $post['title'] ?>
@@ -11,23 +11,28 @@
         </div>
     </div>
     <?php if (!(!isset($_SESSION['admin']) && htmlspecialchars($_GET['action']) === 'read_post') ) { ?>
+
         <div class="card-footer bg-footer-post py-1 px-1">
             <div class="d-flex justify-content-end ">
         
     <?php if (htmlspecialchars($_GET['action']) !== 'read_post') { ?>
+
             <a class="btn btn-primary mr-1" href="index.php?action=read_post&postId=<?= $post['id'] ?>">
                     Lire la suite
             </a>
+
     <?php } ?>
     <?php if (isset($_SESSION['admin'])) { ?>
+
             <a class="btn btn-primary mr-1" href="index.php?action=edit_post&postId=<?= $post['id'] ?>">
                 Modifier
             </a>
             <a class="btn btn-danger" href="index.php?action=delete_post&postId=<?= $post['id'] ?>">
                 Supprimer
             </a>
+
     <?php } ?>
         </div>
     </div>
     <?php } ?>
-</div>
+</article>
