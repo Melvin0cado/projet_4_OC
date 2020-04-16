@@ -6,7 +6,7 @@ final class DataBase
     
     private function connect()
     {
-        $this->pdo = new PDO('mysql:host=localhost;dbname=projet_4_oc;charset=utf8', 'root', '');
+        $this->pdo = new PDO('mysql:host=localhost;dbname=projet_4_oc;charset=utf8', 'Melvin', 'P9qbyuNzEaPeetFk');
     }
 
     private function disconnect()
